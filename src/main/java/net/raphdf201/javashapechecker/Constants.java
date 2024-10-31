@@ -6,22 +6,22 @@ package net.raphdf201.javashapechecker;
 public class Constants {
     /**
      * Character representing any empty quarter<br>
-     * Enum equivalent : {@link net.raphdf201.javashapechecker.Enums.quarterType#Empty}
+     * Enum equivalent : {@link net.raphdf201.javashapechecker.Enums.quarterType#EMPTY}
      */
     public static final char empty = '-';
     /**
      * Character representing any shape<br>
-     * Enum equivalent : {@link net.raphdf201.javashapechecker.Enums.quarterType#Shape}
+     * Enum equivalent : {@link net.raphdf201.javashapechecker.Enums.quarterType#SHAPE}
      */
     public static final char shape = 'S';
     /**
      * Character representing a pin<br>
-     * Enum equivalent : {@link net.raphdf201.javashapechecker.Enums.quarterType#Pin}
+     * Enum equivalent : {@link net.raphdf201.javashapechecker.Enums.quarterType#PIN}
      */
     public static final char pin = 'P';
     /**
      * Character representing any crystal<br>
-     * Enum equivalent : {@link net.raphdf201.javashapechecker.Enums.quarterType#Crystal}
+     * Enum equivalent : {@link net.raphdf201.javashapechecker.Enums.quarterType#CRYSTAL}
      */
     public static final char crystal = 'c';
     /**

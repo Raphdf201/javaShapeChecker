@@ -1,0 +1,37 @@
+Simulated :
+
+Rotate 90
+Input               Output
+CuCu----        →   --CuCu--
+Cu--Cu--        →   --Cu--Cu
+CuCu--Cu--Cu    →   CuCuCu--Cu--
+
+Destroy west half
+Input               Output
+CuCuCuCu        → 	CuCu----
+Cu--Cu--        →   Cu------
+
+Stack
+Bottom Right    Top Left        Output Top
+--CuCu--    +   CuCu----    →   --CuCu--:CuCu----
+CuCuCuCu    +   RuRuRuRu    →   CuCuCuCu:RuRuRuRu
+
+Unstack
+Input (Bottom)                  Top (Left) 		Bottom (Right)
+CuCuCuCu:RuRuRuRu:SuSuSuSu 	→ 	SuSuSuSu 	& 	CuCuCuCu:RuRuRuRu
+CuCuCuCu                    → 	CuCuCuCu 	& 	null
+
+Crystal
+Shape Input 		    Color Input 	Output
+Su--Su-- 	        + 	color-r 	→ 	SucrSucr
+P-P-P-P-:RuRu---- 	+ 	color-b 	→ 	cbcbcbcb:RuRucbcb
+
+Swap
+Input A 		Input B 		Output A 		Output B
+CuCuCuCu 	& 	RuRuRuRu 	→ 	CuCuRuRu 	& 	RuRuCuCu
+SwSwCrCr 	& 	RbRbRbRb 	→ 	SwSwRbRb 	& 	RbRbCrCr
+
+PinPush
+Input 		    Output
+CuCuCuCu 	→ 	P-P-P-P-:CuCuCuCu
+Cu--Cu-- 	→ 	P---P---:Cu--Cu--

@@ -3,7 +3,7 @@ package net.raphdf201.javashapechecker;
 /**
  * A class containing all the enums I need for this project<br>
  * {@link quarterType}<br>
- * {@link net.raphdf201.javashapechecker.Enums.Scenario}
+ * {@link scenario}
  */
 public class Enums {
     /**
@@ -13,57 +13,105 @@ public class Enums {
         /**
          * Shape code character : --
          */
-        Empty,
+        EMPTY,
         /**
          * Shape code character : P-
          */
-        Pin,
+        PIN,
         /**
          * Possible shapes in Regular scenario :<br>
          * C- R- S- W-
          */
-        Shape,
+        SHAPE,
         /**
          * Shape code character : -c
          */
-        Crystal
+        CRYSTAL
     }
 
     /**
      * The scenario the shape is used in
      */
-    public enum Scenario {
+    public enum scenario {
         /**
          * Each shape is composed of 4 quarters<br>
          * 4 layers are possible
          */
-        Regular,
+        REGULAR,
         /**
-         * Same as {@link net.raphdf201.javashapechecker.Enums.Scenario#Regular} but 5 layers are possible
+         * Same as {@link scenario#REGULAR} but 5 layers are possible
          */
-        Insane,
+        INSANE,
         /**
          * Each shape is composed of 6 quarters<br>
          * 4 layers are possible
          */
-        Hex
+        HEX
     }
 
-    public enum action {    // TODO : docs
+    /**
+     * A list of buildings
+     */
+    public enum action {
+        /**
+         * Rotate the shape 90 degrees in {@link scenario#REGULAR}
+         * Rotate the shape 60 degrees in {@link scenario#HEX}
+         */
         ROTATE90,
+        /**
+         * Rotate the shape 180 degrees
+         */
         ROTATE180,
+        /**
+         * Rotate the shape 270 degrees
+         */
         ROTATE270,
+        /**
+         * Swap the east and west halves
+         */
         SWAP,
+        /**
+         * Stack two shapes
+         */
         STACK,
+        /**
+         * Remove the west half
+         */
         CUT,
-        DIVIDE
+        /**
+         * Separate the east and west halves
+         */
+        DIVIDE,
+        /**
+         * Create pin under every non-empty shape part of the shape's bottom layer
+         */
+        PINPUSH
     }
 
-    public enum eAction {   // TODO : docs
+    /**
+     * List of simulated buildings
+     */
+    public enum eAction {
+        /**
+         * Rotate the shape 90 degrees in {@link scenario#REGULAR}
+         * Rotate the shape 60 degrees in {@link scenario#HEX}
+         */
         ROTATE,
+        /**
+         * Swap the east and west halves
+         */
         SWAP,
+        /**
+         * Stack two shapes
+         */
         STACK,
+        /**
+         * Unstack two shapes
+         */
         UNSTACK,
+        /**
+         * Remove the west half
+         */
         CUT
     }
 }
