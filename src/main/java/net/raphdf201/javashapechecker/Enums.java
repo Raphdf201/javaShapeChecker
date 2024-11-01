@@ -59,11 +59,13 @@ public class Enums {
          */
         ROTATE90,
         /**
-         * Rotate the shape 180 degrees
+         * Rotate the shape 180 degrees in {@link scenario#REGULAR}
+         * Rotate the shape 120 degrees in {@link scenario#HEX}
          */
         ROTATE180,
         /**
-         * Rotate the shape 270 degrees
+         * Rotate the shape 270 degrees in {@link scenario#REGULAR}
+         * Rotate the shape 300 degrees in {@link scenario#HEX}
          */
         ROTATE270,
         /**

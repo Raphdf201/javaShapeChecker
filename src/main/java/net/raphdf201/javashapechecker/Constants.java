@@ -32,4 +32,17 @@ public class Constants {
      * Uncolored character, to replace any other color
      */
     public static final char color = 'u';
+    /**
+     * The prefix for colors
+     * Ex : color-r
+     */
+    public static final String colorPrefix = "color-";
+    /**
+     * The first letter of every color
+     */
+    public static final char[] colorIDs = {'r', 'g', 'b', 'y', 'm', 'c', 'w'};
+    /**
+     * The full name of every color
+     */
+    public static final String[] colorNames = {colorPrefix + 'r', colorPrefix + 'g', colorPrefix + 'b', colorPrefix + 'y', colorPrefix + 'm', colorPrefix + 'c', colorPrefix + 'w'};
 }
