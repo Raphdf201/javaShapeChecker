@@ -11,3 +11,9 @@ repositories {
 
 dependencies {
 }
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'net.raphdf201.javashapechecker.Main'
+    }
+}

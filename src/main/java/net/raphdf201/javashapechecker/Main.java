@@ -4,8 +4,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+import static net.raphdf201.javashapechecker.Constants.lookup;
 import static net.raphdf201.javashapechecker.Constants.search;
-import static net.raphdf201.javashapechecker.Constants.lookup;;
+import static net.raphdf201.javashapechecker.Constants.help;
 
 /**
  * The main class contains most of the logic to // TODO
@@ -21,30 +22,25 @@ public class Main {
             System.out.println("Enter help to know what commands are available");
         } else {
             switch (args[0]) {
-                case "help":
+                case help -> {
                     System.out.println("Welcome to the javaShapeChecker");
                     System.out.println("Possible arguments :");
-                    System.out.print(lookup);
-                    tab();
+                    System.out.print(lookup + " : ");
                     System.out.println("Check if a shape is present in a .bin file");
                     System.out.println("Usage : ./javaShapeChecker lookup file.bin CuRrcb--:P-P-P-Sy");
                     System.out.println("             app name      command   file     shape");
                     enter();
-                    System.out.println(search);
-                    tab();
+                    System.out.print(search + " : ");
                     System.out.println("List all the possible shapes by bruteforce and write them to a .bin file");
                     System.out.println("Usage : ./javaShapeChecker search file.bin 5");
                     System.out.println("             app name      command   file   nb of layers");
-                    break;
-                case search:
-                    search(new File(args[1]));
-                    break;
-                case lookup:
-                    lookup(readBinFile(args[1]), new Shape(args[2]));
-                    break;
-                default:
-                    System.out.println("Incorrect argument, please enter search, lookup or help");
-                    break;
+                    enter();
+                    System.out.print(help + " : ");
+                    System.out.println("Show this help menu");
+                }
+                case search -> search(new File(args[1]));
+                case lookup -> lookup(readBinFile(args[1]), new Shape(args[2]));
+                default -> System.out.println("Incorrect argument, please enter search, lookup or help");
             }
         }
     }

@@ -54,4 +54,5 @@ public class Constants {
     public static final String tab = "\t";
     public static final String search = "search";
     public static final String lookup = "lookup";
+    public static final String help = "help";
 }
