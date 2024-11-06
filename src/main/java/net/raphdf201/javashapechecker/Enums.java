@@ -1,9 +1,7 @@
 package net.raphdf201.javashapechecker;
 
 /**
- * A class containing all the enums I need for this project<br>
- * {@link quarterType}<br>
- * {@link scenario}
+ * Contains all the inner enums of the project
  */
 public class Enums {
     /**
