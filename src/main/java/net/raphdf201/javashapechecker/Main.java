@@ -21,7 +21,7 @@ public class Main {
         if (args.length == 0) {
             System.out.println("Enter help to know what commands are available");
         } else {
-            switch (args[0]) {
+            switch (args[0].toLowerCase()) {
                 case help -> {
                     System.out.println("Welcome to the javaShapeChecker");
                     System.out.println("Possible arguments :");
@@ -37,6 +37,8 @@ public class Main {
                     enter();
                     System.out.print(help + " : ");
                     System.out.println("Show this help menu");
+                    System.out.println("Usage : ./javaShapeChecker help");
+                    System.out.println("             app name      command");
                 }
                 case search -> search(new File(args[1]));
                 case lookup -> lookup(readBinFile(args[1]), new Shape(args[2]));
