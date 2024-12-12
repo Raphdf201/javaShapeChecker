@@ -55,4 +55,7 @@ public class Constants {
     public static final String search = "search";
     public static final String lookup = "lookup";
     public static final String help = "help";
+
+    public static final String shapeFile4 = "shapes4.bin";
+    public static final String shapeFile5 = "shapes5.bin";
 }

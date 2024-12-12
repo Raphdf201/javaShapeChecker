@@ -4,9 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-import static net.raphdf201.javashapechecker.Constants.lookup;
-import static net.raphdf201.javashapechecker.Constants.search;
-import static net.raphdf201.javashapechecker.Constants.help;
+import static net.raphdf201.javashapechecker.Constants.*;
 
 /**
  * The main class contains most of the logic to // TODO
@@ -22,27 +20,44 @@ public class Main {
             System.out.println("Enter help to know what commands are available");
         } else {
             switch (args[0].toLowerCase()) {
-                case help -> {
-                    System.out.println("Welcome to the javaShapeChecker");
-                    System.out.println("Possible arguments :");
-                    System.out.print(lookup + " : ");
-                    System.out.println("Check if a shape is present in a .bin file");
-                    System.out.println("Usage : ./javaShapeChecker lookup file.bin CuRrcb--:P-P-P-Sy");
-                    System.out.println("             app name      command   file     shape");
-                    enter();
-                    System.out.print(search + " : ");
-                    System.out.println("List all the possible shapes by bruteforce and write them to a .bin file");
-                    System.out.println("Usage : ./javaShapeChecker search file.bin 5");
-                    System.out.println("             app name      command   file   nb of layers");
-                    enter();
-                    System.out.print(help + " : ");
-                    System.out.println("Show this help menu");
-                    System.out.println("Usage : ./javaShapeChecker help");
-                    System.out.println("             app name      command");
-                }
-                case search -> search(new File(args[1]));
-                case lookup -> lookup(readBinFile(args[1]), new Shape(args[2]));
-                default -> System.out.println("Incorrect argument, please enter search, lookup or help");
+                case help:
+                    System.out.println("""
+                    Welcome to the javaShapeChecker
+                    Possible arguments :
+                    lookup : Check if a shape is present in a .bin file
+                    Usage : ./javaShapeChecker lookup 5 CuRrcb--:P-P-P-Sy
+                                 app name     command layer  shape
+                    
+                    search : List all the possible shapes by bruteforce and write them to a .bin file
+                    Usage : ./javaShapeChecker search 5
+                                 app name     command   nb of layers
+                    
+                    help : Show this help menu
+                    Usage : ./javaShapeChecker help
+                                 app name     command
+                    """);
+                    break;
+                case search:
+                    if (args[1] == "4") {
+                        search(new File(shapeFile4));
+                    } else if (args[1] == "5") {
+                        search(new File(shapeFile5));
+                    } else {
+                        System.out.println("Enter 4 or 5");
+                    }
+                    break;
+                case lookup:
+                    if (args[1] == "4") {
+                        lookup(new File(shapeFile4));
+                    } else if (args[1] == "5") {
+                        lookup(new File(shapeFile5));
+                    } else {
+                        System.out.println("Enter 4 or 5");
+                    }
+                    break;
+                default:
+                    System.out.println("Incorrect argument, please enter search, lookup or help");
+                    break;
             }
         }
     }
@@ -65,7 +80,7 @@ public class Main {
         }
     }
 
-    public static void lookup(byte[] data, Shape shape) {
+    public static void lookup(File inputFile) {
     }
 
     public static void search(File outputFile) {
