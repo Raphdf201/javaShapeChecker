@@ -3,6 +3,7 @@ package net.raphdf201.javashapechecker;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Objects;
 
 import static net.raphdf201.javashapechecker.Constants.*;
 
@@ -23,18 +24,18 @@ public class Main {
         } else {
             switch (args[0].toLowerCase()) {
                 case search:
-                    if (args[1] == "4") {
+                    if (Objects.equals(args[1], "4")) {
                         search(new File(shapeFile4));
-                    } else if (args[1] == "5") {
+                    } else if (Objects.equals(args[1], "5")) {
                         search(new File(shapeFile5));
                     } else {
                         System.out.println("Enter 4 or 5");
                     }
                     break;
                 case lookup:
-                    if (args[1] == "4") {
+                    if (Objects.equals(args[1], "4")) {
                         lookup(new File(shapeFile4), new Shape(args[2]));
-                    } else if (args[1] == "5") {
+                    } else if (Objects.equals(args[1], "5")) {
                         lookup(new File(shapeFile5), new Shape(args[2]));
                     } else {
                         System.out.println("Enter 4 or 5");
@@ -49,7 +50,7 @@ public class Main {
 
     /**
      * Reads a binary file to an array of bytes
-     * 
+     *
      * @param fileName the name of the file or relative path to it
      * @return byte array
      */
@@ -67,14 +68,16 @@ public class Main {
 
     /**
      * Search for a shape code in a .bin file
+     *
      * @param inputFile the file to read the shapes
-     * @param shape the shape to search for
+     * @param shape     the shape to search for
      */
     public static void lookup(File inputFile, Shape shape) {
     }
 
     /**
      * List all the possible shapes by bruteforce and write them to a .bin file
+     *
      * @param outputFile the file to write the shapes to
      */
     public static void search(File outputFile) {
