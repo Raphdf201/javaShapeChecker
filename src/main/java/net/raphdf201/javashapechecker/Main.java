@@ -7,7 +7,9 @@ import java.io.IOException;
 import static net.raphdf201.javashapechecker.Constants.*;
 
 /**
- * The main class contains most of the logic to // TODO
+ * The main class contains most of the logic of the commands, including
+ * {@link net.raphdf201.javashapechecker.Main#lookup(File, Shape)} and
+ * {@link net.raphdf201.javashapechecker.Main#search(File)}
  */
 public class Main {
     /**
@@ -20,23 +22,6 @@ public class Main {
             System.out.println("Enter help to know what commands are available");
         } else {
             switch (args[0].toLowerCase()) {
-                case help:
-                    System.out.println("""
-                    Welcome to the javaShapeChecker
-                    Possible arguments :
-                    lookup : Check if a shape is present in a .bin file
-                    Usage : ./javaShapeChecker lookup 5 CuRrcb--:P-P-P-Sy
-                                 app name     command layer  shape
-                    
-                    search : List all the possible shapes by bruteforce and write them to a .bin file
-                    Usage : ./javaShapeChecker search 5
-                                 app name     command   nb of layers
-                    
-                    help : Show this help menu
-                    Usage : ./javaShapeChecker help
-                                 app name     command
-                    """);
-                    break;
                 case search:
                     if (args[1] == "4") {
                         search(new File(shapeFile4));
@@ -48,15 +33,15 @@ public class Main {
                     break;
                 case lookup:
                     if (args[1] == "4") {
-                        lookup(new File(shapeFile4));
+                        lookup(new File(shapeFile4), new Shape(args[2]));
                     } else if (args[1] == "5") {
-                        lookup(new File(shapeFile5));
+                        lookup(new File(shapeFile5), new Shape(args[2]));
                     } else {
                         System.out.println("Enter 4 or 5");
                     }
                     break;
                 default:
-                    System.out.println("Incorrect argument, please enter search, lookup or help");
+                    System.out.println(helpMessage);
                     break;
             }
         }
@@ -65,8 +50,8 @@ public class Main {
     /**
      * Reads a binary file to an array of bytes
      * 
-     * @param fileName the name of the file or relativ epath to it
-     * @return byte array of file.lenght length
+     * @param fileName the name of the file or relative path to it
+     * @return byte array
      */
     public static byte[] readBinFile(String fileName) {
         File file = new File(fileName);
@@ -80,17 +65,18 @@ public class Main {
         }
     }
 
-    public static void lookup(File inputFile) {
+    /**
+     * Search for a shape code in a .bin file
+     * @param inputFile the file to read the shapes
+     * @param shape the shape to search for
+     */
+    public static void lookup(File inputFile, Shape shape) {
     }
 
+    /**
+     * List all the possible shapes by bruteforce and write them to a .bin file
+     * @param outputFile the file to write the shapes to
+     */
     public static void search(File outputFile) {
-    }
-
-    public static void tab() {
-        System.out.print(Constants.tab);
-    }
-
-    public static void enter() {
-        System.out.println();
     }
 }

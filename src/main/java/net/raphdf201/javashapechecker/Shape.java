@@ -6,7 +6,7 @@ import static net.raphdf201.javashapechecker.Enums.quarterType;
  * A shape object, used for lookups
  */
 public class Shape {
-    private String shapeCode;
+    private final String shapeCode;
     private byte nbLayers;
     private Enums.scenario scenario;
 
