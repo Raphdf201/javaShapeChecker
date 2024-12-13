@@ -1,14 +1,18 @@
 package net.raphdf201.javashapechecker;
 
-import static net.raphdf201.javashapechecker.Enums.quarterType;
+import static net.raphdf201.javashapechecker.Enums.Type;
 
 /**
  * A shape object, used for lookups
  */
 public class Shape {
     private final String shapeCode;
-    private byte nbLayers;
-    private Enums.scenario scenario;
+    private final byte nbLayers;
+    private byte nbParts;
+
+    public boolean check() {
+        return nbLayers * nbLayers * 2 <= 64;
+    }
 
     /**
      * Constructor for a shape object
@@ -17,11 +21,6 @@ public class Shape {
      */
     public Shape(String shapeCode) {    // TODO : This format : https://discordapp.com/channels/1000343719314198548/1295099125016301608/1300226163251216405
         String[] layers = shapeCode.split(String.valueOf(Constants.layer));
-        if (layers.length > 4) {
-            this.scenario = Enums.scenario.INSANE;
-        } else {
-            this.scenario = Enums.scenario.REGULAR;
-        }
         this.shapeCode = shapeCode;
         this.nbLayers = (byte) layers.length;
     }
@@ -32,12 +31,12 @@ public class Shape {
      * @param type A quarter
      * @return The character representing the quarter
      */
-    public static char typeToChar(quarterType type) {
+    public static char typeToChar(Type type) {
         return switch (type) {
-            case quarterType.EMPTY -> Constants.empty;
-            case quarterType.PIN -> Constants.pin;
-            case quarterType.SHAPE -> Constants.shape;
-            case quarterType.CRYSTAL -> Constants.crystal;
+            case Type.EMPTY -> Constants.empty;
+            case Type.PIN -> Constants.pin;
+            case Type.SHAPE -> Constants.shape;
+            case Type.CRYSTAL -> Constants.crystal;
         };
     }
 
@@ -47,12 +46,12 @@ public class Shape {
      * @param c A quarter character
      * @return The type of the quarter
      */
-    public static quarterType charToType(char c) {
+    public static Type charToType(char c) {
         return switch (c) {
-            case Constants.pin -> quarterType.PIN;
-            case Constants.shape -> quarterType.SHAPE;
-            case Constants.crystal -> quarterType.CRYSTAL;
-            default -> quarterType.EMPTY;
+            case Constants.pin -> Type.PIN;
+            case Constants.shape -> Type.SHAPE;
+            case Constants.crystal -> Type.CRYSTAL;
+            default -> Type.EMPTY;
         };
     }
 

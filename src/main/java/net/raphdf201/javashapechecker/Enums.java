@@ -7,25 +7,32 @@ public class Enums {
     /**
      * The type of shape quarter
      */
-    public enum quarterType {
-        /**
-         * Shape code character : --
-         */
-        EMPTY,
-        /**
-         * Shape code character : P-
-         */
-        PIN,
-        /**
-         * Possible shapes in Regular scenario :<br>
-         * C- R- S- W-
-         */
-        SHAPE,
-        /**
-         * Shape code character : -c
-         */
-        CRYSTAL
+    public enum Type {
+        EMPTY(0),
+        PIN(1),
+        SHAPE(2),
+        CRYSTAL(3);
+
+        private final int value;
+
+        Type(int value) {
+            this.value = value;
+        }
+
+        public int getValue() {
+            return value;
+        }
+
+        public static Type fromValue(int value) {
+            for (Type type : values()) {
+                if (type.value == value) {
+                    return type;
+                }
+            }
+            throw new IllegalArgumentException("Invalid Type value: " + value);
+        }
     }
+
 
     /**
      * The scenario the shape is used in
