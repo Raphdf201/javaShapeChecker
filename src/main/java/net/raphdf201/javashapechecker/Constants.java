@@ -44,12 +44,12 @@ public class Constants {
     /**
      * The first letter of every color
      */
-    public static final char[] colorIDs = { 'r', 'g', 'b', 'y', 'm', 'c', 'w' };
+    public static final char[] colorIDs = {'r', 'g', 'b', 'y', 'm', 'c', 'w'};
     /**
      * The full name of every color
      */
-    public static final String[] colorNames = { colorPrefix + 'r', colorPrefix + 'g', colorPrefix + 'b',
-            colorPrefix + 'y', colorPrefix + 'm', colorPrefix + 'c', colorPrefix + 'w' };
+    public static final String[] colorNames = {colorPrefix + 'r', colorPrefix + 'g', colorPrefix + 'b',
+            colorPrefix + 'y', colorPrefix + 'm', colorPrefix + 'c', colorPrefix + 'w'};
     /**
      * A tab character (\t)
      */
@@ -70,20 +70,20 @@ public class Constants {
      * The help message displayed when help or null argument entered
      */
     public static final String helpMessage = """
-    Welcome to the javaShapeChecker
-    Possible arguments :
-    lookup : Check if a shape is present in a .bin file
-    Usage : ./javaShapeChecker lookup 5 CuRrcb--:P-P-P-Sy
-                 app name     command layer  shape
-    
-    search : List all the possible shapes by bruteforce and write them to a .bin file
-    Usage : ./javaShapeChecker search 5
-                 app name     command  nb of layers
-    
-    help : Show this help menu
-    Usage : ./javaShapeChecker help
-                 app name     command
-    """;
+            Welcome to the javaShapeChecker
+            Possible arguments :
+            lookup : Check if a shape is present in a .bin file
+            Usage : ./javaShapeChecker lookup 5 CuRrcb--:P-P-P-Sy
+                         app name     command layer  shape
+            
+            search : List all the possible shapes by bruteforce and write them to a .bin file
+            Usage : ./javaShapeChecker search 5
+                         app name     command  nb of layers
+            
+            help : Show this help menu
+            Usage : ./javaShapeChecker help
+                         app name     command
+            """;
     /**
      * The default filename for 4 layer search/lookup
      */
