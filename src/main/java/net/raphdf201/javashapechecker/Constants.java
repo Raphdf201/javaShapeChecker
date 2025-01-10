@@ -7,25 +7,25 @@ public class Constants {
     /**
      * Character representing any empty quarter<br>
      * Enum equivalent :
-     * {@link net.raphdf201.javashapechecker.Enums.quarterType#EMPTY}
+     * {@link net.raphdf201.javashapechecker.Enums.Type#EMPTY}
      */
     public static final char empty = '-';
     /**
      * Character representing any shape<br>
      * Enum equivalent :
-     * {@link net.raphdf201.javashapechecker.Enums.quarterType#SHAPE}
+     * {@link net.raphdf201.javashapechecker.Enums.Type#SHAPE}
      */
     public static final char shape = 'S';
     /**
      * Character representing a pin<br>
      * Enum equivalent :
-     * {@link net.raphdf201.javashapechecker.Enums.quarterType#PIN}
+     * {@link net.raphdf201.javashapechecker.Enums.Type#PIN}
      */
     public static final char pin = 'P';
     /**
      * Character representing any crystal<br>
      * Enum equivalent :
-     * {@link net.raphdf201.javashapechecker.Enums.quarterType#CRYSTAL}
+     * {@link net.raphdf201.javashapechecker.Enums.Type#CRYSTAL}
      */
     public static final char crystal = 'c';
     /**

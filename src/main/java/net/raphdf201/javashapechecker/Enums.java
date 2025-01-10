@@ -8,21 +8,45 @@ public class Enums {
      * The type of shape quarter
      */
     public enum Type {
+        /**
+         * --
+         */
         EMPTY(0),
+        /**
+         * P-
+         */
         PIN(1),
+        /**
+         * C/R/S/W
+         */
         SHAPE(2),
+        /**
+         * c
+         */
         CRYSTAL(3);
 
+        /**
+         * Value, 0-3
+         */
         private final int value;
 
         Type(int value) {
             this.value = value;
         }
 
+        /**
+         * Getter for the value of the enum
+         * @return the value of the enum
+         */
         public int getValue() {
             return value;
         }
 
+        /**
+         * Value transformer
+         * @param value value input
+         * @return type output
+         */
         public static Type fromValue(int value) {
             for (Type type : values()) {
                 if (type.value == value) {

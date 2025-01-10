@@ -10,6 +10,10 @@ public class Shape {
     private final byte nbLayers;
     private byte nbParts;
 
+    /**
+     * Checks byte size of the shape
+     * @return true if the size is less than 8 bytes
+     */
     public boolean check() {
         return nbLayers * nbLayers * 2 <= 64;
     }
